@@ -23,14 +23,19 @@ let package = Package(
         )
     ],
     targets: [
-        .target(name: "AirTurnUI",
+        .target(name: "AirTurnUIObjC",
                         dependencies: [
                             .product(name: "AirTurnInterface", package: "AirTurnInterface")
                         ],
-                        path: "Sources",
+                        path: "AirTurnUI",
+                        exclude: ["SwiftSources"],
                         resources: [
                             .process("Resources")
                         ]
+        ),
+        .target(name: "AirTurnUI",
+                        dependencies: ["AirTurnUIObjC"],
+                        path: "SwiftSources"
         )
     ]
 )
