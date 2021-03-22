@@ -2607,10 +2607,17 @@ static BOOL hasFirstKeyWindow = NO;
                     c.textLabel.text = AirTurnUILocalizedString(@"Keyboard AirTurn", @"Keyboard AirTurn cell text");
                     c.accessoryType = UITableViewCellAccessoryDetailButton;
                 }
-                if(AirTurnKeyboardManager.sharedManager.automaticKeyboardManagementEnabled) {
-                    c.detailTextLabel.text = !AirTurnKeyboardStateMonitor.sharedMonitor.allowKeyboardStateReassessment || AirTurnViewManager.sharedViewManager.connected ? AirTurnUILocalizedString(@"Connected", @"Connected AirTurn label") : AirTurnUILocalizedString(@"Disconnected", @"Disconnected AirTurn label");
-                } else {
-                    c.detailTextLabel.text = nil;
+                switch(AirTurnKeyboardStateMonitor.sharedMonitor.externalKeyboardState) {
+                    default:
+                    case AirTurnExternalKeyboardStateUnknown:
+                        c.detailTextLabel.text = nil;
+                        break;
+                    case AirTurnExternalKeyboardStateDisconnected:
+                        c.detailTextLabel.text = AirTurnUILocalizedString(@"Disconnected", @"Disconnected AirTurn label");
+                        break;
+                    case AirTurnExternalKeyboardStateConnected:
+                        c.detailTextLabel.text = AirTurnUILocalizedString(@"Connected", @"Connected AirTurn label");
+                        break;
                 }
                 
                 return c;
