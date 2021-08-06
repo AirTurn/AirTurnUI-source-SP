@@ -1825,7 +1825,7 @@ static BOOL hasFirstKeyWindow = NO;
     return self.viewVisible && self.isPoweredOn && _supportAirDirect && _enabled;
 }
 
-+ (void)goToSettings {
++ (void)goToSettings NS_EXTENSION_UNAVAILABLE_IOS("AirTurnUI is not supported for iOS extensions.") {
     if(@available(iOS 10.0, *)) {
         [[UIApplication sharedApplication] openURL:(NSURL * _Nonnull)[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
     } else {
@@ -1965,7 +1965,7 @@ static BOOL hasFirstKeyWindow = NO;
     
 }
 
-- (void)connectionStateChanged:(NSNotification *)n {
+- (void)connectionStateChanged:(NSNotification *)n NS_EXTENSION_UNAVAILABLE_IOS("AirTurnUI is not supported for iOS extensions.") {
     if(!_supportAirDirect || !_enabled) {
         return;
     }
@@ -2201,7 +2201,7 @@ static BOOL hasFirstKeyWindow = NO;
     return result;
 }
 
-- (void)presentConnectionProblemAlertForPeripheral:(AirTurnPeripheral *)peripheral {
+- (void)presentConnectionProblemAlertForPeripheral:(AirTurnPeripheral *)peripheral NS_EXTENSION_UNAVAILABLE_IOS("AirTurnUI is not supported for iOS extensions.") {
     UIAlertController *ac = [UIAlertController alertControllerWithTitle:AirTurnUILocalizedString(@"Problem connecting", @"Problem connecting error title") message:[NSString stringWithFormat:AirTurnUILocalizedString(@"There was a problem connecting to %1$@. This usually happens if you reset your AirTurn to delete the pairing without resetting the pairing in iOS, or have just updated the firmware. To delete the pairing, go in to iOS settings > Bluetooth > %1$@ (tap (i)) > Forget This Device, toggle Bluetooth off and on, then try connecting again in this App by tapping the alert icon next to the AirTurn and then 'Reconnect'", @"Problem connecting error message"), peripheral.name] preferredStyle:UIAlertControllerStyleAlert];
     [ac addAction:[UIAlertAction actionWithTitle:AirTurnUILocalizedString(@"Dismiss", @"Dismiss button title") style:UIAlertActionStyleCancel handler:nil]];
     [ac addAction:[UIAlertAction actionWithTitle:AirTurnUILocalizedString(@"iOS Settings", @"iOS settings alert button") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
