@@ -3,7 +3,7 @@
 
 import PackageDescription
 
-let version = "4.5.0-b.1"
+let version = "4.5.1"
 
 let package = Package(
     name: "AirTurnUI",
@@ -28,9 +28,9 @@ let package = Package(
                             .product(name: "AirTurnInterface", package: "AirTurnInterface")
                         ],
                         path: "AirTurnUI",
-                        exclude: ["../SwiftSources"],
+                        exclude: ["SwiftSources"],
                         resources: [
-                            .process("../Resources")
+                            .process("Resources")
                         ]
         ),
         .target(name: "AirTurnUI",
