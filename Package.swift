@@ -28,9 +28,9 @@ let package = Package(
                             .product(name: "AirTurnInterface", package: "AirTurnInterface")
                         ],
                         path: "AirTurnUI",
-                        exclude: ["SwiftSources"],
+                        exclude: ["../SwiftSources"],
                         resources: [
-                            .process("Resources")
+                            .process("../Resources")
                         ]
         ),
         .target(name: "AirTurnUI",
