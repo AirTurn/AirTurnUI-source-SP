@@ -662,6 +662,9 @@ static NSDictionary<AirTurnAppAction,NSString *> *AnalogAppActions = nil;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     AirTurnAppAction previous = _selectedAppAction;
     _selectedAppAction = indexPath.row == 0 ? nil : self.appActionIdentifiersSorted[indexPath.row-1];
+    if(previous == _selectedAppAction) {
+        return;
+    }
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
     UITableViewCell *cell2 = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:previous ? [self.appActionIdentifiersSorted indexOfObject:previous] + 1 : 0 inSection:0]];
