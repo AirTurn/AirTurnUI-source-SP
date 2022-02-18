@@ -905,16 +905,19 @@ static BOOL DisplayActionsInPopover = NO;
 
 - (void)analogValueChanged:(NSNotification *)notification {
     AirTurnPort port = [notification.userInfo[AirTurnPortNumberKey] integerValue];
-    AirTurnPortValue val = [notification.userInfo[AirTurnAnalogPortValueKey] shortValue];
     NSInteger offset = port - AirTurnPortMinimum;
     if(offset >= self.analogIndicatorViews.count) {
         return;
+    }
+    float fraction = (float)[notification.userInfo[AirTurnAnalogPortValueKey] shortValue] / (float)AirTurnPortValueMax;
+    if([self.peripheral analogPortHasMidpoint:port]) {
+        fraction = (fraction * 0.5f) + 0.5f;
     }
     UIView *v = self.analogIndicatorViews[offset];
     v.alpha = 0.8f;
     NSLayoutConstraint *c = self.analogIndicatorViewConstraints[offset];
     [UIView animateWithDuration:0.05 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        c.constant = - self.maxAnalogIndicatorConstraintValue * val / AirTurnPortValueMax;
+        c.constant = - self.maxAnalogIndicatorConstraintValue * fraction;
         if(v.window) {
             [v.superview layoutIfNeeded];
         }
