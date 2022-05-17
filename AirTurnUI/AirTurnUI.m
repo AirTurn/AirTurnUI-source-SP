@@ -1700,10 +1700,15 @@ static BOOL hasFirstKeyWindow = NO;
         [[AirTurnCentral sharedCentral] discoverMockPeripheralModel:AirTurnDeviceTypeBT200S_4];
         [[AirTurnCentral sharedCentral] discoverMockPeripheralModel:AirTurnDeviceTypeBT200S_6];
         [[AirTurnCentral sharedCentral] discoverMockPeripheralModel:AirTurnDeviceTypeQUAD200];
-        [[AirTurnCentral sharedCentral] discoverMockPeripheralModel:AirTurnDeviceTypeBT500];
+        [[AirTurnCentral sharedCentral] discoverMockPeripheralModel:AirTurnDeviceTypeDIGIT500];
         [[AirTurnCentral sharedCentral] discoverMockPeripheralModel:AirTurnDeviceTypeBT500S_2];
         [[AirTurnCentral sharedCentral] discoverMockPeripheralModel:AirTurnDeviceTypeBT500S_4];
         [[AirTurnCentral sharedCentral] discoverMockPeripheralModel:AirTurnDeviceTypeBT500S_6];
+        [[AirTurnCentral sharedCentral] discoverMockPeripheralModel:AirTurnDeviceTypeDUO500];
+        [[AirTurnCentral sharedCentral] discoverMockPeripheralModel:AirTurnDeviceTypeTAP500];
+        [[AirTurnCentral sharedCentral] discoverMockPeripheralModel:AirTurnDeviceTypeQUAD500];
+        [[AirTurnCentral sharedCentral] discoverMockPeripheralModel:AirTurnDeviceTypePEDpro500];
+        [[AirTurnCentral sharedCentral] discoverMockPeripheralModel:AirTurnDeviceTypeDIGITIII500];
     }
 }
 #endif

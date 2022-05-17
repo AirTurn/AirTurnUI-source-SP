@@ -3,7 +3,7 @@
 
 import PackageDescription
 
-let version = "4.6.0-b.2"
+let version = "4.6.0"
 
 let package = Package(
     name: "AirTurnUI",
