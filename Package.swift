@@ -8,7 +8,7 @@ let version = "4.6.1"
 let package = Package(
     name: "AirTurnUI",
     defaultLocalization: "en",
-    platforms: [.iOS(.v9)],
+    platforms: [.iOS(.v11)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
