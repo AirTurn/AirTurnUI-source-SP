@@ -241,7 +241,7 @@ NSBundle * _Nonnull AirTurnUIBundle;
 #define AirTurnUILocalizedString(key, comment) \
 [AirTurnUIBundle localizedStringForKey:(key) value:@"" table:@"AirTurnUI"]
 
-__attribute__((constructor)) static void AirTurnUILocalizedStringInitialize() {
+__attribute__((constructor)) static void AirTurnUILocalizedStringInitialize(void) {
     AirTurnUIBundle = [NSBundle bundleWithIdentifier:@"AirTurnUI"];
     if(AirTurnUIBundle == nil) {
         AirTurnUIBundle = [NSBundle mainBundle];
@@ -1261,13 +1261,13 @@ static NSString * const AirTurnUIShouldRestoreUserInfoKey = @"AirTurnUIRestoreSt
 static NSString * const ModernConnectionModeName = @"AirDirect";
 static NSString * const LegacyConnectionModeName = @"Keyboard";
 
-static NSString * const ModeSwitchInfoURL = @"https://www.airturn.com/framework/info/";
+static NSString * const ModeSwitchInfoURL = @"https://dev.airturn.com/sdk/info/";
 static NSString * const ModeSwitchInfoLoadNotification = @"Loaded";
 static NSString * const ModeSwitchInfoTypeNotification = @"Type";
 static NSString * const ModeSwitchInfoTypeNotificationContentAirDirect = @"AirDirect";
 static NSString * const ModeSwitchInfoTypeNotificationContentKeyboard = @"Keyboard";
 
-static NSString * const AppLinkURL = @"https://www.airturn.com/appLink/";
+static NSString * const AppLinkURL = @"https://app.airturn.com/appLink/";
 
 static BOOL hasFirstKeyWindow = NO;
 
