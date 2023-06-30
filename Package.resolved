@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "AirTurnInterface",
-        "repositoryURL": "https://github.com/AirTurn/AirTurnInterface-dynamic-SP.git",
+        "repositoryURL": "https://github.com/AirTurn/AirTurnInterface-mergeable-SP.git",
         "state": {
           "branch": null,
-          "revision": "8f7306fc9787c5d7f6c6e883b5e07d7e6786383c",
-          "version": "4.7.0"
+          "revision": "e22277d7d5ac369a4674e9636e1c2dea954b1db3",
+          "version": "4.8.0-b.1"
         }
       }
     ]
