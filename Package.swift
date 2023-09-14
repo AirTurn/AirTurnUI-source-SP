@@ -3,12 +3,12 @@
 
 import PackageDescription
 
-let version = "4.7.3"
+let version = "4.8.0"
 
 let package = Package(
     name: "AirTurnUI",
     defaultLocalization: "en",
-    platforms: [.iOS(.v11)],
+    platforms: [.iOS(.v12)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -18,7 +18,7 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "AirTurnInterface",
-                         url: "https://github.com/AirTurn/AirTurnInterface-dynamic-SP.git",
+                         url: "https://github.com/AirTurn/AirTurnInterface-mergeable-SP.git",
                          from: Version(version)!
         )
     ],
