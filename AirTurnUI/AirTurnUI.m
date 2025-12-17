@@ -2697,7 +2697,7 @@ static BOOL hasFirstKeyWindow = NO;
                         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
                         [button addTarget:self action:@selector(nonAirDirectModeWarningTapped:) forControlEvents:UIControlEventTouchUpInside];
                         [button setImage:[UIImage imageNamed:@"alert" inBundle:AirTurnUIBundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
-                        button.tintColor = [UIColor systemYellowColor];
+                        button.tintColor = [UIColor systemRedColor];
                         [accessoryViews addObject:button];
                     }
                 } break;
@@ -2897,7 +2897,7 @@ static BOOL hasFirstKeyWindow = NO;
 }
 
 - (void)nonAirDirectModeWarningTapped:(UIButton *)sender {
-    UIAlertController *ac = [UIAlertController alertControllerWithTitle:AirTurnUILocalizedString(@"Mode 2+", @"Non airdirect mode alert title") message:AirTurnUILocalizedString(@"When an AirTurn is connected in modes 2+ you may experience problems with the on-screen keyboard. Switch to mode 1 to avoid these issues", @"Non airdirect mode error message") preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *ac = [UIAlertController alertControllerWithTitle:AirTurnUILocalizedString(@"Incorrect mode", @"Non airdirect mode alert title") message:AirTurnUILocalizedString(@"Switch to mode 1 to use your AirTurn with this application", @"Non airdirect mode error message") preferredStyle:UIAlertControllerStyleAlert];
     [ac addAction:[UIAlertAction actionWithTitle:AirTurnUILocalizedString(@"Dismiss", @"Dismiss button title") style:UIAlertActionStyleCancel handler:nil]];
     [self presentAlert:ac presentGlobally:NO animated:YES];
 }
