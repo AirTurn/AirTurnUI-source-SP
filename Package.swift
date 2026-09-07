@@ -3,12 +3,12 @@
 
 import PackageDescription
 
-let version = "4.8.0-b.2"
+let version = "4.10.0-b.2"
 
 let package = Package(
     name: "AirTurnUI",
     defaultLocalization: "en",
-    platforms: [.iOS(.v12)],
+    platforms: [.iOS(.v15)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(

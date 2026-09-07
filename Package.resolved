@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/AirTurn/AirTurnInterface-mergeable-SP.git",
         "state": {
           "branch": null,
-          "revision": "e22277d7d5ac369a4674e9636e1c2dea954b1db3",
-          "version": "4.8.0-b.1"
+          "revision": "85f031a836dfee3a6eca83a08333cc55bed4ecc6",
+          "version": "4.10.0-b.2"
         }
       }
     ]
