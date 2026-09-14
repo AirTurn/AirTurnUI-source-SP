@@ -30,7 +30,8 @@ let package = Package(
                         path: "AirTurnUI",
                         exclude: ["../SwiftSources"],
                         resources: [
-                            .process("../Resources")
+                            .process("../Resources/AirTurnUIImages.xcassets"),
+                            .process("../Resources/en.lproj")
                         ]
         ),
         .target(name: "AirTurnUI",
